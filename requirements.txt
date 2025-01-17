@@ -1,0 +1,10 @@
+flask
+flask-cors
+requests
+google-generativeai
+openai
+edge-tts
+jinja2
+configparser
+python-dotenv  # Optional, if you decide to use .env for environment variables
+tiktoken # Used by OpenAI

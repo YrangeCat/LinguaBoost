@@ -1,0 +1,335 @@
+/* General styles for the custom alert */
+/* #customAlert {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.2);
+  display: none;
+ } */
+
+ /* Class to show the alert */
+ #customAlert.visible {
+  /* Make it visible */
+  display: block;
+ }
+
+ /* translation-button */
+ #translation-button {
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 1rem;
+
+ }
+ #translation-button:hover {
+  background: linear-gradient(120deg, #ebe8e860 0%, #ebedee 100%);
+
+ }
+
+
+ /* New styles for the alert container */
+ #alert-container {
+  /* border-bottom: 1px solid #ccc; */
+  /* background-image: linear-gradient(120deg, #ebe8e860 0%, #ebedee 100%); */
+  /* background-image: linear-gradient(120deg, #242424 0%, #ebedee 100%); */
+  overflow: hidden;
+  margin-bottom: 1rem;
+  /* margin-top: 1rem; */
+  font-size:0.8rem;
+  height:1.2rem;
+  text-align: center;
+  /* display: none; */
+  /* border-radius: 1rem; */
+  /* box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2); */
+  background-color: white;
+  text-indent: 0;
+  /* border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem; */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: 1px solid #ccc;
+ }
+
+ /* Article container styles */
+ article {
+  /* box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2); */
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  opacity: 0.98;
+ }
+
+ /* Text content container styles */
+ #text-content {
+  padding: 1rem;
+  /* margin-top: 1rem; */
+  /* box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2); */
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  /* border-radius: 1rem; */
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+ }
+
+ #grammar-text-content {
+    padding: 1rem;
+    /* margin-top: 1rem; */
+    /* box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2); */
+    border: 1px solid #ccc;
+    /* border-radius: 1rem; */
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+   }
+   /* Translation section styles */
+ #grammar-correct-section {
+    /* border-radius: 1rem; */
+
+
+    /* box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2); */
+    background-color: white;
+
+    border:None;
+   }
+
+ /* Highlighted term styles */
+ .highlighted-term {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  position: relative;
+  background-image: linear-gradient(120deg, #242424 0%, #ebedee 100%);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 0% 0.2rem;
+  transition: background-size 0.3s ease;
+ }
+
+ /* Hover and focus styles for highlighted terms */
+ .highlighted-term:hover,
+ .highlighted-term:focus {
+  background-size: 100% 0.1rem;
+ }
+
+ /* Custom tooltip styles */
+ .custom-tooltip {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  padding: 1rem;
+  z-index: 1000;
+  font-size: 0.9em;
+  color: #333;
+  font-weight: 600;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  pointer-events: none;
+  opacity: 0;
+ }
+
+ /* Tooltip visibility classes */
+ .custom-tooltip.visible {
+  opacity: 1;
+ }
+
+ .custom-tooltip.hidden {
+  opacity: 0;
+ }
+
+ /* Timing info container styles */
+ .timing-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2rem;
+  padding-left: 1rem;
+  background-color: white;
+  font-size: 0.6em;
+  /* box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2); */
+  transition: box-shadow 0.3s ease;
+  /* border-radius: 0.75rem; */
+  height: 1.2rem;
+  overflow: hidden;
+  /* margin-top: 1rem; */
+  /* background-image: linear-gradient(120deg, #ebe8e860 0%, #ebedee 100%); */
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+ }
+
+ /* Hover effect for timing info */
+ /* .timing-info:hover {
+  box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.3);
+ } */
+
+ /* Section styles */
+ .section {
+  text-indent: 2em;
+ }
+
+ /* Styles to hide audio controls */
+ audio::-webkit-media-controls-enclosure {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+ }
+
+ audio::-webkit-media-controls-timeline {
+  display: none;
+ }
+
+ /* Translation section styles */
+ #translation-section {
+  transition: opacity 0.3s ease-in-out;
+
+  /* border-radius: 1rem; */
+  padding: 1rem;
+  /* box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2); */
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+ }
+
+ /* Translation header styles */
+ #translation-header {
+  /* background-image: linear-gradient(120deg, #ebe8e860 0%, #ebedee 100%); */
+  /* border: 1px solid #ccc; */
+  /* border-radius: 1rem; */
+  color: rgb(0, 0, 0);
+  /* cursor: pointer; */
+ }
+
+ /* Translation content styles */
+ /* #translation-content {
+  transition: opacity 0.5s ease-in-out;
+ } */
+
+/* Styles for the settings button and panel */
+#settings-button {
+ position: fixed;
+ top: 1rem;
+ right: 1rem;
+ background-color: #f0f0f0;
+ border-radius: 1rem;
+ cursor: pointer;
+ z-index: 1001; /* Ensure it's above other elements */
+}
+
+#refresh-button {
+ background: transparent;
+ border-width: 0;
+ /* position: fixed; */
+ /* bottom: 1rem; */
+ /* right: 2rem; */
+ border-radius: 1rem;
+ cursor: pointer;
+ z-index: 1001;
+
+ padding: 0;
+ padding-block: 0;
+ padding-inline: 0;
+}
+
+#settings-panel {
+ overflow: hidden;
+ position: fixed;
+ width:20rem;
+ top: 2rem;
+ right: 2rem;
+ background-color: white;
+ /* padding: 1rem; */
+ border-radius: 1rem;
+ z-index: 1001; /* Ensure it's above other elements */
+ box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+#save-settings-button {
+ align-items: center;
+ display: block;
+ background: #fafafa;
+ width: 100%;
+ margin: auto;
+ border-width: 0;
+}
+#save-settings-button:hover{
+ background: linear-gradient(120deg, #ebe8e860 0%, #ebedee 100%);
+}
+
+#AISettings select {
+ width: 100%;
+ z-index: 1005;
+ border: none; /* 移除所有边框 */
+ border-bottom: 1px solid #ccc; /* 设置下边框样式 */
+ background-color: transparent; /* 设置背景颜色为透明 */
+ margin-bottom: 0.5rem;
+}
+
+
+
+#AISettings {
+ display: flex;
+ flex-direction: column;
+}
+
+#AISettings label, #AISettings input {
+ width: 100%;
+}
+
+#AISettings label {
+ margin-bottom: 0.5rem; /* 可选：调整 label 和 input 之间的间距 */
+}
+
+#AISettings input {
+ border: none; /* 移除所有边框 */
+ border-bottom: 1px solid #ccc; /* 设置下边框样式 */
+ background-color: transparent; /* 设置背景颜色为透明 */
+}
+
+#AISettings input:active {
+ border-color: #ccc;
+}
+
+/* Style the tab */
+.tab {
+ display: flex;
+ justify-content: center;
+ overflow: hidden;
+ border-bottom: 1px solid #ccc;
+ background-color: #ffffff;
+ border-top-left-radius: 1rem;
+ border-top-right-radius: 1rem;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+ background:white;
+ /* float: left; */
+ flex: 1;
+ border: none;
+ outline: none;
+ cursor: pointer;
+ padding: 0.5rem;
+
+ font-size: 1.1rem;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+ background: linear-gradient(120deg, #ebe8e860 0%, #ebedee 100%);
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+ background: linear-gradient(120deg, #ebe8e860 0%, #ebedee 100%);
+}
+
+/* Style the tab content */
+.tabcontent {
+ display: none;
+ padding: 0.5rem;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goldendict Output</title>
+    <style>{{ css_content }}</style>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+</head>
+<body>
+    <article>
+            <div  id="grammar-correct-section">
+                <div id="translation-header"><b>原文</b></div>
+            <p style="text-indent: 2em;" >{{ original_text|safe }}</p>
+                </div>
+        <div  id="grammar-correct-section">
+            <div id="translation-header"><b>修正</b> <button id="translation-button" >复制</button></div>
+            <p style="text-indent: 2em;" id="translation-content" style="opacity: 1;">{{ translation|safe }}</p>
+        </div>
+
+        <div  id="guide-section">
+            <div id="guide-header"><b>修改意见</b></div>
+            <div  id="guide-content"></div>
+        </div>
+
+
+            <span style=" display: flex;
+            align-items: center;
+            justify-content: space-between;
+             white-space: nowrap;  height:1rem;">
+                <b>语法修正用时:{{ grammar_check_time|round(1) }}s </b>
+                <button id="refresh-button">🔄</button></span>
+
+    </article>
+    <script>
+        // Convert the Markdown guide to HTML
+        var converter = new showdown.Converter();
+        var guideMarkdown = `{{ correction_guide|safe }}`;
+        var guideHtml = converter.makeHtml(guideMarkdown);
+        document.getElementById('guide-content').innerHTML = guideHtml;
+        var guideMarkdown1 = `{{ translation|safe }}`;
+        var guideHtml1 = converter.makeHtml(guideMarkdown1);
+        document.getElementById('translation-content').innerHTML = guideHtml1;
+    </script>
+    <script>
+        {{ js_content|safe }}
+    </script>
+</body>
+</html>

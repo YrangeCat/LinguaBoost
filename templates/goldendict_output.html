@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goldendict Output</title>
+    <style>{{ css_content }}</style>
+</head>
+<body>
+    <div id="settings-button">⚙️</div>
+
+    <div id="settings-panel" style="display: none;">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'GeneralSettings')">General</button>
+            <button class="tablinks" onclick="openTab(event, 'AISettings')">AI</button>
+        </div>
+
+        <div id="GeneralSettings" class="tabcontent" style="display: block;">
+            {% for handler in settings_handlers %}
+                {% if handler.key != 'apiKey' and handler.key != 'baseUrl' and handler.key != 'model' and handler.key != 'selectedProvider' %}
+                    {{ handler.render_html()|safe }}
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div id="AISettings" class="tabcontent">
+            {% for handler in settings_handlers %}
+                {% if handler.key == 'apiKey' or handler.key == 'baseUrl' or handler.key == 'model' or handler.key == 'selectedProvider' %}
+                    {{ handler.render_html()|safe }}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <button id="save-settings-button">✅Save</button>
+
+    </div>
+    <article>
+        <section class="section">
+            
+            <div id="text-content">{{ highlighted_text|safe }}</div>
+        </section>
+        <div id="alert-container"></div>
+        {% if show_translation %}
+        <div class="section" id="translation-section">
+            <div id="translation-header"><b>翻译</b> <button id="translation-button" >复制</button></div>
+            <p id="translation-content" style="opacity: 1;">{{ translation }}</p>
+            
+            
+        </div>
+        {% endif %}
+        {% if show_timing_info %}
+        <div class="timing-info">
+            <audio id="audioPlayer" controls {% if autoplay %}autoplay{% endif %} preload="none">
+                <source src="file://{{ audio_file_path }}" type="audio/mpeg">
+            </audio>
+            <span style="opacity:0.5; white-space: nowrap;">
+                AI翻译: {{ translation_time|round(1) }}s 
+                AI分析: {{ analysis_time|round(1) }}s 
+                TTS: {{ audio_time|round(1) }}s
+            </span>
+            <button id="refresh-button">🔄</button>
+        </div>
+        {% endif %}
+    </article>
+    <div id="anki-config" style="display:none;">
+        <script>
+            window.ANKI_CONFIG = {{ anki_config_js|safe }};
+        </script>
+    </div>
+    <script>
+        {{ js_content|safe }}
+    </script>
+</body>
+</html>
